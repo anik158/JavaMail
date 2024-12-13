@@ -1,5 +1,6 @@
 package com.ahsan;
 
+import com.ahsan.view.ViewFactory;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,14 +20,8 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent parent = FXMLLoader.load(getClass().getResource("view/loginWindow.fxml"));
-
-        Scene scene = new Scene(parent, 524, 284);
-
-        primaryStage.setTitle("Hello world");
-
-        primaryStage.setScene(scene);
-
-        primaryStage.show();
+        ViewFactory viewFactory = new ViewFactory(new EmailManager());
+        viewFactory.showLoginWindow();
+//        viewFactory.showMainWindow();
     }
 }

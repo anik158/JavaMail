@@ -8,4 +8,5 @@ module FirstJavaFX {
 
     opens com.ahsan;
     opens com.ahsan.view;
+    opens com.ahsan.controller;
 }
