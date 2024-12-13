@@ -4,6 +4,7 @@ import com.ahsan.EmailManager;
 import com.ahsan.controller.BaseController;
 import com.ahsan.controller.LoginWindowController;
 import com.ahsan.controller.MainWindowController;
+import com.ahsan.controller.OptionsWindowController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,6 +31,12 @@ public class ViewFactory {
         BaseController controller = new MainWindowController(emailManager,"mainWindow.fxml",this);
         initializeStage(controller);
 
+    }
+
+    public void showOptionsWindow(){
+        System.out.println("Show options window");
+        BaseController controller = new OptionsWindowController(emailManager,"optionsWindow.fxml",this);
+        initializeStage(controller);
     }
 
     private void initializeStage(BaseController controller) {
